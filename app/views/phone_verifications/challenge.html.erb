@@ -1,2 +1,14 @@
-<h1>PhoneVerifications#challenge</h1>
-<p>Find me in app/views/phone_verifications/challenge.html.erb</p>
+<h1>Challenge</h1>
+
+<%= form_tag(verify_phone_verifications_path, method: :post) do -%>
+  <% if @response %>
+    <% @response.errors.each do |key, message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+  <div>
+    <%= label_tag "code", "Enter the code you were sent:" %>
+    <%= text_field_tag "code" %>
+  </div>
+  <%= button_tag "Verify" %>
+<% end -%>
