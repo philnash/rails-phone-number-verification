@@ -1,24 +1,33 @@
-# README
+# Rails Phone Number Verification
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is an example of performing phone number verification using the [Authy Verification API](https://www.twilio.com/docs/api/authy/authy-phone-verification-api).
 
-Things you may want to cover:
+## Running the application
 
-* Ruby version
+To run it you will need:
 
-* System dependencies
+* [A Twilio account](https://www.twilio.com/try-twilio)
+* [An Authy App which you can create in the Twilio console](https://www.twilio.com/console/authy/applications), you'll need the API key
+* Ruby installed, I built this with Ruby 2.4.1, but any Ruby with support for Rails 5 should work
 
-* Configuration
+### Getting started
 
-* Database creation
+Clone this repo and install the dependencies:
 
-* Database initialization
+```bash
+git clone git@github.com:philnash/rails-phone-number-verification.git
+cd rails-phone-number-verification
+bundle install
+```
 
-* How to run the test suite
+Add your credentials to the config. Start by copying `config/env.yml.example` to `config/env.yml`. Then fill in your Authy app API key in `config/env.yml`.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Run the application
 
-* Deployment instructions
+To run the application, start it as a normal Rails app:
 
-* ...
+```bash
+rails server
+```
+
+Then visit [http://localhost:3000/phone_verifications/new](http://localhost:3000/phone_verifications/new).
